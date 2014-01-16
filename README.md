@@ -21,4 +21,45 @@ $shortwell_TinyMCE->templates = array(
 );
 </pre>
 
-4. Now 
+4. Now find the `tinyMCE-plugin-sample.js` and rename it to `tinyMCE-plugin.js` and open it
+5. Replace the `_____id_____` with the `shortcode_unique_id` , `_____title_____` with shortcode title and `____icon_____` with icon path
+6. create and new file call `audio-TinyMCE.php` and put the code like below
+<pre>
+<?php
+$tinyMCE = new Easy_TinyMCE_Class_content;
+$tinyMCE->id = 'accordion';
+$tinyMCE->shortcode = 'accordion';
+$tinyMCE->content = true;
+$tinyMCE->options = array(
+	array(
+		'id' => 'class',
+		'field' => 'text', //text, textarea, select post-select, tax-select
+		'title' => __( 'Div Class', 'shortwell_textdomain' ),
+		'des' => '',
+		'post_type' => '',
+		'multiple' => false,
+		'content' => false,
+		'option' => '',
+	),
+	
+	array(
+		'id' => 'link',
+		'field' => 'textarea', //text, textarea, select post-select, tax-select
+		'title' => __( 'Link', 'shortwell_textdomain' ),
+		'des' => '',
+		'post_type' => '',
+		'std' => '[accordion_item title="Accordion 1"] .... Content onw11 ....[/]
+		[accordion_item title="Accordion 1"] .... Content onw11 ....[/accordion_item]
+		[accordion_item title="Accordion 1"] .... Content onw11 ....[/accordion_item]',
+		'multiple' => false,
+		'content' => true,
+		'option' => '',
+	)
+	
+);
+$tinyMCE->html();
+</pre>
+
+That's all
+
+I have included an example folder with the working example. Don't forget to check it
