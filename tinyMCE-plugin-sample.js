@@ -1,3 +1,4 @@
+/*replace the "____id_____" with the id you added on the class*/
 jQuery(document).ready(function($) {
     tinymce.create('tinymce.plugins.____id_____', {
         init : function(ed, url) {
